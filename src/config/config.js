@@ -5,8 +5,8 @@ const config = {
         user: process.env.DATABASE_USER,
         password: process.env.DATABASE_PASSWORD,
         pool: {
-            min: process.env.DATABASE_POOL_MIN,
-            max: process.env.DATABASE_POOL_MAX
+            min: parseInt(process.env.DATABASE_POOL_MIN),
+            max: parseInt(process.env.DATABASE_POOL_MAX)
         }
     },
     webServer: {
