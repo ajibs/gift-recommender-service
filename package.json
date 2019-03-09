@@ -1,0 +1,25 @@
+{
+  "name": "gift-recommender",
+  "version": "1.0.0",
+  "description": "recommends gifts for friends",
+  "main": "server.js",
+  "dependencies": {
+    "express": "4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajibs/gift-recommender.git"
+  },
+  "author": "Bolu Ajibawo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajibs/gift-recommender/issues"
+  },
+  "homepage": "https://github.com/ajibs/gift-recommender#readme"
+}
