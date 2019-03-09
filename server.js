@@ -12,5 +12,5 @@ app.get('/', (req, res) => {
 app.get('/gifts', (req, res) => giftSelectionController(req, res));
 
 app.listen(PORT, () => {
-    logger.info(`App started and listenting on port: ${PORT}`);
+    logger.info(`App started and listening on port: ${PORT}`);
 });
