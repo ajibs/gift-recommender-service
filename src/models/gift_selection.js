@@ -11,7 +11,6 @@ const GiftSelection = bookshelf.Model.extend({
 
     fetchGiftsBasedOnOptions: function (params) {
         const { age_id, budget_id } = params;
-        console.log('fetching from database');
         return this.where({ age_id, budget_id })
             .fetchAll({ withRelated: 'gift' })
             .catch(error => {
