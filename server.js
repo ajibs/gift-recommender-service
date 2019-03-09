@@ -4,7 +4,7 @@ const config = require('src/config/config');
 const giftSelectionController = require('src/controllers/gift_selection');
 
 app.get('/', (req, res) => {
-    res.send('Hey bolu')
+    res.send('Hey bolu');
 });
 
 app.get('/gifts', (req, res) => {
