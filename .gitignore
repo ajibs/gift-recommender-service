@@ -6,6 +6,5 @@ cache.properties
 /coverage
 docker_logs
 npm-debug.log
-package-lock.json
 *.log
 .env

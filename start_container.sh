@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IMAGE_NAME="gift_recommender_web_app"
+IMAGE_NAME="gift_recommender_service"
 
 ROOT="$( pwd )"
 
