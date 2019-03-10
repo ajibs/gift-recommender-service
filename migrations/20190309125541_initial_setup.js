@@ -19,12 +19,15 @@ exports.up = function (knex) {
         commonTables(table, knex);
         table.integer('min').notNullable();
         table.integer('max').notNullable();
+    })).then(() => knex.schema.createTable('gift_idea', (table) => {
+        commonTables(table, knex);
     })).then(() => knex.schema.createTable('gift', (table) => {
         table.increments();
         table.string('product_link').notNullable().unique();
         table.string('title').notNullable();
         table.integer('price').notNullable();
         table.string('image_url').notNullable().defaultTo('https://upload.wikimedia.org/wikipedia/commons/b/b7/Big_smile.png');
+        relationsGenerator('gift_idea_id', 'gift_idea', table);
         baseMethods(table, knex);
     })).then(() => knex.schema.createTable('gift_selection', (table) => {
         relationsGenerator('gift_id', 'gift', table);
