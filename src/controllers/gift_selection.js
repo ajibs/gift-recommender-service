@@ -1,10 +1,19 @@
 const giftSelectionService = require('src/services/gift_selection');
+const shortid = require('shortid');
+const logger = require('src/lib/logger');
 
 const giftSelectionController = (req, res) => {
-    const params = req.query;
-    return giftSelectionService(params)
-        .then((result) => {
-            res.send(result);
+    const reqId = shortid.generate();
+    const params = req.body;
+    logger.info(`Request ID : ${reqId} - fetching gifts selection from controller with params`, params);
+
+    return giftSelectionService(params, reqId)
+        .then((data) => {
+            logger.info(`Request ID : ${reqId} - Successfully fetched gifts selections: `, data);
+            res.send({
+                status: 200,
+                data
+            });
         });
 };
 
