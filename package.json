@@ -38,7 +38,9 @@
   },
   "homepage": "https://github.com/ajibs/gift-recommender-service#readme",
   "dependencies": {
+    "body-parser": "1.18.3",
     "bookshelf": "0.14.2",
+    "cors": "2.8.5",
     "dotenv": "6.2.0",
     "express": "4.16.4",
     "knex": "0.14.6",
