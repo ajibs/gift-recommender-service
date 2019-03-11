@@ -10,7 +10,7 @@ const config = {
         }
     },
     webServer: {
-        port: process.env.WEB_SERVER_PORT
+        port: process.env.PORT || process.env.WEB_SERVER_PORT
     }
 };
 

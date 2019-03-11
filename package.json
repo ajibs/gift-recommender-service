@@ -12,9 +12,11 @@
     "seed": "knex seed:run",
     "reboot": "npm run rollback && npm run migrate && npm run seed",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "setup:db": "npm run reboot && nodemon server.js",
     "start": "node server.js",
     "precommit": "lint-staged",
-    "postcommit": "git update-index --again"
+    "postcommit": "git update-index --again",
+    "heroku:deploy": "heroku container:push web --app mysterious-sea-71699 && heroku container:release web --app mysterious-sea-71699"
   },
   "lint-staged": {
     "linters": {

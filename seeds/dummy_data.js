@@ -1,8 +1,8 @@
 const timestamp = new Date();
 
 const time = {
-    created_at: timestamp,
-    updated_at: timestamp
+    created_at: timestamp
+    // updated_at: timestamp
 };
 
 exports.seed = function (knex) {
