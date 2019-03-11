@@ -16,8 +16,8 @@ const relationsGenerator = (columnName, nameOfForeignTable, table, options = {})
 };
 
 const baseMethods = (table, knex) => {
-    table.dateTime('created_at').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP'));
-    table.dateTime('updated_at').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+    table.timestamp('created_at').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP'));
+    // table.timestamp('updated_at').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
     relationsGenerator('status_id', 'status', table, { defaultValue: 1 });
 };
 

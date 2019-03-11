@@ -5,8 +5,8 @@ exports.up = function (knex) {
         table.increments();
         table.string('code').notNullable().unique();
         table.string('label').notNullable().unique();
-        table.dateTime('created_at').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP'));
-        table.dateTime('updated_at').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+        table.timestamp('created_at').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP'));
+        // table.timestamp('updated_at').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
     }).then(() => knex.schema.createTable('gender', (table) => {
         commonTables(table, knex);
     })).then(() => knex.schema.createTable('interest', (table) => {
@@ -42,6 +42,7 @@ exports.up = function (knex) {
 exports.down = function (knex) {
     return knex.schema.dropTable('gift_selection')
         .then(() => knex.schema.dropTable('gift'))
+        .then(() => knex.schema.dropTable('gift_idea'))
         .then(() => knex.schema.dropTable('budget'))
         .then(() => knex.schema.dropTable('age'))
         .then(() => knex.schema.dropTable('interest'))
