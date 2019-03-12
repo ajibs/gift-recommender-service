@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send('Hello world');
+    res.send('Hello World! Welcome to Gift Recommender Service');
 });
 
 app.post('/gifts', (req, res) => giftSelectionController(req, res));
