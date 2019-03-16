@@ -4,7 +4,7 @@ const joi = require('joi');
 const pick = require('lodash.pick');
 
 const giftsSelectionSchema = require('src/validations/gift_selection');
-const allowedKeys = ['age', 'budget'];
+const allowedKeys = ['budget'];
 const constants = require('src/config/constants');
 
 const validateParams = (params, schema, reqId) => {

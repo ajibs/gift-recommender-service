@@ -5,7 +5,8 @@ const age = {
 
 const budget = {
     zero: 1,
-    one_to_five_thousand: 2
+    one_to_five_thousand: 2,
+    five_to_ten_thousand: 3
 };
 
 module.exports = {
