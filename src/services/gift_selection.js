@@ -4,7 +4,7 @@ const joi = require('joi');
 const pick = require('lodash.pick');
 
 const giftsSelectionSchema = require('src/validations/gift_selection');
-const allowedKeys = ['age', 'budget'];
+const allowedKeys = ['budget'];
 const constants = require('src/config/constants');
 
 const validateParams = (params, schema, reqId) => {
@@ -35,7 +35,7 @@ const formatPayload = (params, reqId) => {
 
 const giftSelection = (params, reqId) => new Promise((resolve, reject) => {
     const formattedPayload = formatPayload(params, reqId);
-    logger.info(`Request ID : ${reqId} - fetching gifts selection from service with payload`, formattedPayload);
+    logger.info(`Request ID : ${reqId} - fetching gifts selection from service with payload ${formattedPayload}`);
 
     new GiftSelectionModel().fetchGiftsBasedOnOptions(formattedPayload)
         .then((response) => {

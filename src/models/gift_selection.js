@@ -1,18 +1,20 @@
 const bookshelf = require('bookshelf_config');
 
-const Gift = require('src/models/gift');
+const GiftIdea = require('src/models/gift_idea');
 
 const GiftSelection = bookshelf.Model.extend({
     tableName: 'gift_selection',
 
-    gift: function () {
-        return this.belongsTo(Gift);
+    giftIdea: function () {
+        return this.belongsTo(GiftIdea);
     },
 
+    // TODO: migration to make `price` on gift table nullable
+    // TODO: write migration for new gift_selection table: `budget_id` and `gift_idea_id` only
+
     fetchGiftsBasedOnOptions: function (params) {
-        const { age_id, budget_id } = params;
-        return this.where({ age_id, budget_id })
-            .fetchAll({ withRelated: 'gift' })
+        return this.where(params)
+            .fetchAll({ withRelated: 'giftIdea' })
             .catch(error => {
                 throw error;
             });

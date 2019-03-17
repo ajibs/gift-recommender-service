@@ -9,7 +9,7 @@ const giftSelectionController = (req, res) => {
 
     return giftSelectionService(params, reqId)
         .then((data) => {
-            logger.info(`Request ID : ${reqId} - Successfully fetched gifts selections: `, data);
+            logger.info(`Request ID : ${reqId} - Successfully fetched gifts selections: ${JSON.stringify(data)}`);
             res.send({
                 status: 200,
                 data
