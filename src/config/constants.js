@@ -9,7 +9,13 @@ const budget = {
     five_to_ten_thousand: 3
 };
 
+const status = {
+    ACTIVE: 1,
+    DELETED: 2
+};
+
 module.exports = {
     age,
-    budget
+    budget,
+    status
 };
