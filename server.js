@@ -5,7 +5,7 @@ const logger = require('src/lib/logger');
 const PORT = config.webServer.port;
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const routes = require('src/routes/index');
+const routes = require('src/routes/routes');
 
 app.use(cors());
 

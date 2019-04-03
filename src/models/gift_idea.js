@@ -11,6 +11,14 @@ const GiftIdea = bookshelf.Model.extend({
             .catch(error => {
                 throw error;
             });
+    },
+
+    createGiftSuggestion: function (giftSuggestion) {
+        return this.save(giftSuggestion)
+            .then(res => res.toJSON())
+            .catch(error => {
+                throw error;
+            });
     }
 });
 

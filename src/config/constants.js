@@ -11,7 +11,8 @@ const budget = {
 
 const status = {
     ACTIVE: 1,
-    DELETED: 2
+    DELETED: 2,
+    INACTIVE: 3
 };
 
 module.exports = {
