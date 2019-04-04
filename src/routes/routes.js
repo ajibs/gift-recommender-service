@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 
 router.post('/gift', (req, res) => giftSelectionController(req, res));
 
-router.get('/gift-idea', (req, res) => giftIdeaController(req, res));
+router.get('/gift-idea/all', (req, res) => giftIdeaController(req, res));
 
 router.get('/gift/gift-idea/:gift_idea_id', (req, res) => giftController(req, res));
 

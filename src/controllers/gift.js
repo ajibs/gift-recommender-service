@@ -16,7 +16,6 @@ const giftController = (req, res) => {
         })
         .catch(error => {
             logger.error(`Request ID : ${reqId} - Error occurred while fetching gift under an idea. Error: ${error}`);
-            throw error;
         });
 };
 

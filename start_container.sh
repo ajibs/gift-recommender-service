@@ -35,7 +35,7 @@ echo " ----- Run Application in a Disposable Container -----"
 docker run \
     -i \
     -t \
-    -p 8080 \
+    -p 32900:8080 \
     --rm \
     -v ${ROOT}:/src \
     --env-file=${ROOT}/.env \

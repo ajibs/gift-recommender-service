@@ -4,19 +4,18 @@ const logger = require('src/lib/logger');
 
 const giftIdeaController = (req, res) => {
     const reqId = shortid.generate();
-    logger.info(`Request ID : ${reqId} - fetching gift ideas from controller`);
+    logger.info(`Request ID : ${reqId} - fetching all gift ideas from controller`);
 
     return giftIdeaService(reqId)
         .then((data) => {
-            logger.info(`Request ID : ${reqId} - Successfully fetched gift ideas: ${JSON.stringify(data)}`);
+            logger.info(`Request ID : ${reqId} - Successfully fetched all gift ideas: ${JSON.stringify(data)}`);
             res.send({
                 status: 200,
                 data
             });
         })
         .catch(error => {
-            logger.error(`Request ID : ${reqId} - Error occurred while fetching gift ideas. Error: ${error}`);
-            throw error;
+            logger.error(`Request ID : ${reqId} - Error occurred while fetching all gift ideas. Error: ${error}`);
         });
 };
 
