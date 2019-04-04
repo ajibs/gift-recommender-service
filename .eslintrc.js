@@ -3,6 +3,12 @@ module.exports = {
     "env": {
         "node": true
     },
+    "globals": {
+        "describe": false,
+        "afterEach": false,
+        "beforeEach": false,
+        "it": false
+    },
     "rules": {
         "camelcase": [0, {"properties": "always"}],
         "max-len": [2, {"code": 150} ],

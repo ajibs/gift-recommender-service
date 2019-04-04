@@ -8,3 +8,4 @@ docker_logs
 npm-debug.log
 *.log
 .env
+.nyc_output
