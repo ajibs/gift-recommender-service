@@ -1,16 +1,16 @@
 const logger = require('src/lib/logger');
 const Gift = require('src/models/gift');
+const Utils = require('src/lib/utils');
+const shuffleArray = Utils.shuffleArray;
 
-const giftService = (giftIdeaId, reqId) => new Promise((resolve, reject) => {
-    logger.info(`Request ID : ${reqId} - fetching gifts under an idea from service`);
+const giftService = (giftIdeaId, reqId) => {
+    logger.info(`Request ID : ${reqId} - fetching purchase links under an idea from service`);
 
-    new Gift().fetchGiftsUnderAnIdea(giftIdeaId)
-        .then((response) => {
-            resolve(response);
-        })
+    return new Gift().fetchGiftsUnderAnIdea(giftIdeaId)
+        .then(response => shuffleArray(response))
         .catch(error => {
-            reject(error);
+            throw error;
         });
-});
+};
 
 module.exports = giftService;

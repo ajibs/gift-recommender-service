@@ -5,7 +5,9 @@ const logger = require('src/lib/logger');
 const giftSelectionController = (req, res) => {
     const reqId = shortid.generate();
     const params = req.body;
-    logger.info(`Request ID : ${reqId} - fetching gifts selection from controller with params`, params);
+    logger.info(
+        `Request ID : ${reqId} - searching for gift ideas from controller using selection criteria:`, params
+    );
 
     return giftSelectionService(params, reqId)
         .then((data) => {
