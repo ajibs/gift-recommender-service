@@ -11,7 +11,9 @@
     "rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
     "reboot": "npm run rollback && npm run migrate && npm run seed",
-    "test": "echo \"Error: no test specified\"",
+    "unit": "NODE_PATH=. nyc mocha --exit -- -R spec tests/unit/*",
+    "regression": "NODE_PATH=. nyc mocha --exit -- -R spec tests/regression/*",
+    "test": "npm run unit && npm run regression",
     "test:all": "npm run lint && npm run test",
     "setup:db": "npm run reboot && nodemon server.js",
     "start": "node server.js",
@@ -54,6 +56,7 @@
     "winston": "3.2.1"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "5.6.0",
     "eslint-config-standard": "12.0.0",
     "eslint-plugin-import": "2.14.0",
@@ -61,6 +64,10 @@
     "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-standard": "4.0.0",
     "husky": "1.0.0-rc.15",
-    "lint-staged": "7.3.0"
+    "lint-staged": "7.3.0",
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0",
+    "sinon": "^7.3.1",
+    "supertest": "^4.0.2"
   }
 }
