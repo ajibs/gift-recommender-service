@@ -14,6 +14,9 @@ const giftSelectionController = (req, res) => {
                 status: 200,
                 data
             });
+        })
+        .catch(error => {
+            logger.error(`Request ID : ${reqId} - Error occurred while fetching gifts selections. Error: ${error}`);
         });
 };
 
