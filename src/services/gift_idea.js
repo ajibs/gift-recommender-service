@@ -3,16 +3,14 @@ const GiftIdea = require('src/models/gift_idea');
 const Utils = require('src/lib/utils');
 const shuffleArray = Utils.shuffleArray;
 
-const giftIdeaService = (reqId) => new Promise((resolve, reject) => {
+const giftIdeaService = (reqId) => {
     logger.info(`Request ID : ${reqId} - fetching all gifts ideas from service`);
 
-    new GiftIdea().fetchAllGiftIdeas()
-        .then((response) => {
-            resolve(shuffleArray(response));
-        })
+    return new GiftIdea().fetchAllGiftIdeas()
+        .then(response => shuffleArray(response))
         .catch(error => {
-            reject(error);
+            throw error;
         });
-});
+};
 
 module.exports = giftIdeaService;

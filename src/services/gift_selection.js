@@ -6,6 +6,8 @@ const pick = require('lodash.pick');
 const giftsSelectionSchema = require('src/validations/gift_selection');
 const allowedKeys = ['budget'];
 const constants = require('src/config/constants');
+const Utils = require('src/lib/utils');
+const shuffleArray = Utils.shuffleArray;
 
 const validateParams = (params, schema, reqId) => {
     logger.info(`Request ID : ${reqId} - validating params`);
@@ -33,17 +35,17 @@ const formatPayload = (params, reqId) => {
     return extractIds(verifiedPayload, reqId);
 };
 
-const giftSelection = (params, reqId) => new Promise((resolve, reject) => {
-    const formattedPayload = formatPayload(params, reqId);
-    logger.info(`Request ID : ${reqId} - fetching gifts selection from service with payload ${formattedPayload}`);
+const giftSelection = (params, reqId) => {
+    const searchParams = formatPayload(params, reqId);
+    logger.info(
+        `Request ID : ${reqId} - searching for gift ideas from service using selection criteria: ${searchParams}`
+    );
 
-    new GiftSelectionModel().fetchGiftsBasedOnOptions(formattedPayload)
-        .then((response) => {
-            resolve(response);
-        })
+    return new GiftSelectionModel().fetchGiftsBasedOnOptions(searchParams)
+        .then((response) => shuffleArray(response))
         .catch(error => {
-            reject(error);
+            throw error;
         });
-});
+};
 
 module.exports = giftSelection;
