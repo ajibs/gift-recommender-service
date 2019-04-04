@@ -6,6 +6,7 @@ const PORT = config.webServer.port;
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const routes = require('src/routes/routes');
+const keepAlive = require('src/lib/keepDynoAlive');
 
 app.use(cors());
 
@@ -15,4 +16,5 @@ app.use('/', routes);
 
 app.listen(PORT, () => {
     logger.info(`App started and listening on port: ${PORT}`);
+    keepAlive.start();
 });
