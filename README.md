@@ -1,4 +1,4 @@
-# Gift Recommender
+# Gift Recommender - Backend
 [![Build Status](https://travis-ci.com/ajibs/gift-recommender-service.svg?token=aaVJamdqCM415gwrJWEa&branch=master)](https://travis-ci.com/ajibs/gift-recommender-service)
 
 Discover FANTASTIC GIFTS for friends and family. Built for lazy people that want to dazzle their loved ones.
@@ -9,7 +9,7 @@ Discover FANTASTIC GIFTS for friends and family. Built for lazy people that want
 - Search for Gift Ideas based on Budget
 - View Purchase links for Gift Ideas
 - Explore Gift Ideas
-- Contribute Gift Suggestion
+- Contribute Gift Suggestions
 
 > This project assumes you have [Git](https://git-scm.com/downloads) installed.
 
@@ -29,11 +29,11 @@ Then change into the local directory, run the following in your terminal:
 cd gift-recommender-service
 ```
 
-### Docker Setup
+### Docker
 
 You'll need to have [Docker](https://www.docker.com/get-started) installed to proceed with setting up the project.
 
-To start a docker container for Gift Recommender Service, run this command in the terminal:
+To start a docker container for `Gift Recommender Service`, run this command in the terminal:
 
 ```sh
 ./start_container.sh
@@ -41,7 +41,7 @@ To start a docker container for Gift Recommender Service, run this command in th
 
 > N/B: You might have permission problems on a Unix, please visit the following [link](https://askubuntu.com/questions/409025/permission-denied-when-running-sh-scripts) to resolve potential file permission issues.
 
-The `start container` command will link you to the bash terminal of a running container. 
+The `start container` script will link you to the bash terminal of a running container. 
 
 You can then proceed to the **Development** Section or the **Linting & Tests** Section to run sample code.
 

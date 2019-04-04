@@ -18,8 +18,7 @@
     "setup:db": "npm run reboot && nodemon server.js",
     "start": "node server.js",
     "precommit": "lint-staged",
-    "postcommit": "git update-index --again",
-    "heroku:deploy": "heroku container:push web --app mysterious-sea-71699 && heroku container:release web --app mysterious-sea-71699"
+    "postcommit": "git update-index --again"
   },
   "lint-staged": {
     "linters": {
