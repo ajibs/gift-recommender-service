@@ -7,7 +7,9 @@ const giftService = (giftIdeaId, reqId) => {
     logger.info(`Request ID : ${reqId} - fetching purchase links under an idea from service`);
 
     return new Gift().fetchGiftsUnderAnIdea(giftIdeaId)
-        .then(response => shuffleArray(response))
+        .then(response => {
+            if (response) return shuffleArray(response);
+        })
         .catch(error => {
             throw error;
         });
