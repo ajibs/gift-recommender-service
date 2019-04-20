@@ -7,7 +7,9 @@ const giftIdeaService = (reqId) => {
     logger.info(`Request ID : ${reqId} - fetching all gifts ideas from service`);
 
     return new GiftIdea().fetchAllGiftIdeas()
-        .then(response => shuffleArray(response))
+        .then(response => {
+            if (response) return shuffleArray(response);
+        })
         .catch(error => {
             throw error;
         });

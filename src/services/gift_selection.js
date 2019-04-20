@@ -42,7 +42,9 @@ const giftSelection = (params, reqId) => {
     );
 
     return new GiftSelectionModel().fetchGiftsBasedOnOptions(searchParams)
-        .then((response) => shuffleArray(response))
+        .then((response) => {
+            if (response) return shuffleArray(response);
+        })
         .catch(error => {
             throw error;
         });
