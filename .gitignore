@@ -9,3 +9,5 @@ npm-debug.log
 *.log
 .env
 .nyc_output
+deploy.sh
+gcp/deployment.yaml
